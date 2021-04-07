@@ -10,6 +10,7 @@ class Recipe(models.Model):
     def __str__(self):
         return self.name
 
+
 class RecipeIngredients(models.Model):
     recipe_name = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     ingredient = models.CharField(max_length=100)
@@ -18,9 +19,11 @@ class RecipeIngredients(models.Model):
     def __str__(self):
         return self.ingredient
 
+
 class Vegetables(models.Model):
     name = models.CharField(max_length=100)
     objects = models.Manager()
+
     def __str__(self):
         return self.name
 

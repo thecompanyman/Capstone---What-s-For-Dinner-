@@ -1,6 +1,6 @@
 import json
 from django.core.management.base import BaseCommand
-from dinner.models import Recipe, RecipeIngredients
+from whatsfordinner.models import Recipe, RecipeIngredients
 
 class Command(BaseCommand):
     
