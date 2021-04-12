@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Recipe, Vegetables, Seasonings, Oils, RecipeIngredients
+from .models import Recipe, Vegetables, Ingredients, Seasonings, Oils, RecipeIngredients
 # Register your models here.
 
 
@@ -16,3 +16,4 @@ admin.site.register(Vegetables)
 admin.site.register(Seasonings)
 admin.site.register(Oils)
 admin.site.register(RecipeIngredients)
+admin.site.register(Ingredients)

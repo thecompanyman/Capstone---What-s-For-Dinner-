@@ -17,6 +17,7 @@ class Command(BaseCommand):
             recipe.name = all_recipes[recipes]['name']
             recipe.steps = all_recipes[recipes]['instructions']
             recipe.source = all_recipes[recipes]['source']
+            recipe.recipe_ingredients = all_recipes[recipes]['ingredients']
             # print(recipe.name)
             # print(recipe.source)
             # print(recipe.steps)

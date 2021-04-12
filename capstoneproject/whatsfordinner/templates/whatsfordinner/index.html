@@ -36,19 +36,14 @@
         <div v-for="ingredient in selected_ingredients">
             <span>[[ ingredient ]]</span>
         </div>
+        <button @click="findRecipes" type="button">Find Recipes</button>
+        <h3>Recipes:</h3>
+        <div v-for="recipe in recipes">
+            <div>[[ recipe.name ]]</div>
+        </div>
     </div>
 </body>
 </html>
 
 
 
-
-
-
-
-<!-- <select @mousedown="selectVegetables" multiple>
-    <option v-for="vegetable in available_vegetables">[[ vegetable.name ]]</option>
-</select>
-<select multiple>
-    <option v-for="seasoning in available_seasonings">[[ seasoning.name ]]</option>
-</select> -->
