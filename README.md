@@ -64,4 +64,4 @@ What's for Dinner? will allow users to select ingredients they currently have in
 - [ ] Check capstone to make sure code runs smoothly
 - [ ] Create User sign-up/login pages (if time permits)
 - [ ] Allow User to save recipes to favorites (if time permits)
-- [ ] Create separate section to have recipes that may require other ingredients user may not have but has the ability to obtain (if time permits)
+- [ ] Create separate section to have recipes that may require other ingredients user may not have but has the ability to obtain (if time permits)# Capstone---What-s-For-Dinner-
