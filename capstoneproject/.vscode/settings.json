@@ -1,6 +1,7 @@
 {
     "python.pythonPath": "/Library/Frameworks/Python.framework/Versions/3.9/bin/python3",
     "cSpell.words": [
-        "csrftoken"
+        "csrftoken",
+        "recipeingredientoutput"
     ]
 }

@@ -10,7 +10,6 @@ class Command(BaseCommand):
 
         all_recipes = json.loads(data)
         Recipe.objects.all().delete()
-        # RecipeIngredients.objects.all().delete()
 
         for recipes in all_recipes:
             recipe = Recipe()
@@ -18,9 +17,6 @@ class Command(BaseCommand):
             recipe.steps = all_recipes[recipes]['instructions']
             recipe.source = all_recipes[recipes]['source']
             recipe.recipe_ingredients = all_recipes[recipes]['ingredients']
-            # print(recipe.name)
-            # print(recipe.source)
-            # print(recipe.steps)
             recipe.save()
 
             for i in all_recipes[recipes]['ingredients']:
@@ -28,5 +24,3 @@ class Command(BaseCommand):
                 ingredients.recipe_name = recipe
                 ingredients.ingredient = i
                 ingredients.save()
-                # print(ingredients)
-

@@ -14,32 +14,151 @@
     <!--Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-    <!-- Cookie JS -->
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="{% static 'whatsfordinner/styles.css' %}">
+    <!-- Cookie JS -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <!-- JS -->
     <script defer src="{% static 'whatsfordinner/main.js' %}"></script>
 </head>
 <body>
     <div id="app" class="container">
-        <h1>What's for Dinner?</h1>
-        <div v-for="vegetable in available_vegetables">
-            <input type="checkbox" @change="displaySelected(vegetable.name)">
-            <label for="vegetable.name">[[ vegetable.name ]]</label>
+        <img id="logo" src="{% static 'whatsfordinner/img/dinner_logo.svg' %}" alt="Dinner Logo">
+        <div id="item-selection-panel">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Vegetables</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li v-for="vegetable in available_vegetables" class="dropdown-item">
+                        <input type="checkbox" @change="displaySelected(vegetable.name)">
+                        <label for="vegetable.name">[[ vegetable.name ]]</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Seasonings</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li v-for="seasoning in available_seasonings" class="dropdown-item">
+                        <input type="checkbox" @change="displaySelected(seasoning.name)">
+                        <label for="seasoning.name">[[ seasoning.name ]]</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Oils</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li v-for="oil in available_oils" class="dropdown-item">
+                        <input type="checkbox" @change="displaySelected(oil.name)">
+                        <label for="oil.name">[[ oil.name ]]</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Meats</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <!-- <li v-for="oil in available_oils" class="dropdown-item">
+                        <input type="checkbox" @change="displaySelected(oil.name)">
+                        <label for="oil.name">[[ oil.name ]]</label>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Poultry</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <!-- <li v-for="oil in available_oils" class="dropdown-item">
+                        <input type="checkbox" @change="displaySelected(oil.name)">
+                        <label for="oil.name">[[ oil.name ]]</label>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Seafood</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <!-- <li v-for="oil in available_oils" class="dropdown-item">
+                        <input type="checkbox" @change="displaySelected(oil.name)">
+                        <label for="oil.name">[[ oil.name ]]</label>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Fruits</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <!-- <li v-for="oil in available_oils" class="dropdown-item">
+                        <input type="checkbox" @change="displaySelected(oil.name)">
+                        <label for="oil.name">[[ oil.name ]]</label>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Grains</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <!-- <li v-for="oil in available_oils" class="dropdown-item">
+                        <input type="checkbox" @change="displaySelected(oil.name)">
+                        <label for="oil.name">[[ oil.name ]]</label>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Spices</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <!-- <li v-for="oil in available_oils" class="dropdown-item">
+                        <input type="checkbox" @change="displaySelected(oil.name)">
+                        <label for="oil.name">[[ oil.name ]]</label>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Dairy</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <!-- <li v-for="oil in available_oils" class="dropdown-item">
+                        <input type="checkbox" @change="displaySelected(oil.name)">
+                        <label for="oil.name">[[ oil.name ]]</label>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Nuts</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <!-- <li v-for="oil in available_oils" class="dropdown-item">
+                        <input type="checkbox" @change="displaySelected(oil.name)">
+                        <label for="oil.name">[[ oil.name ]]</label>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Alcohol</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <!-- <li v-for="oil in available_oils" class="dropdown-item">
+                        <input type="checkbox" @change="displaySelected(oil.name)">
+                        <label for="oil.name">[[ oil.name ]]</label>
+                    </li> -->
+                </ul>
+            </div>
         </div>
-        <div v-for="seasoning in available_seasonings">
-            <input type="checkbox" @change="displaySelected(seasoning.name)">
-            <label for="seasoning.name">[[ seasoning.name ]]</label>
+        <div id="selected-ingredients-grid">
+            <span>
+                <button id="find-recipes" @click="findRecipes" type="button">Find Recipes</button>
+                <br>
+                <br>
+                <span id="selected-ingredients-title">Selected Ingredients:</span>
+                <br>
+                <br>
+            </span>
         </div>
-        <h3>Selected Ingredients:</h3>
-        <div v-for="ingredient in selected_ingredients">
-            <span>[[ ingredient ]]</span>
+        <div id="selected-ingredients">
+            <span id="individual-ingredients" v-for="ingredient in selected_ingredients">
+                <span id="ingredient-name-color">▪︎ [[ ingredient ]]</span>
+            </span>
         </div>
-        <button @click="findRecipes" type="button">Find Recipes</button>
-        <h3>Recipes:</h3>
-        <div v-for="recipe in recipes">
-            <div>[[ recipe.name ]]</div>
+        <br>
+        <br>
+        <p id="no-recipe-message" v-if="recipes.length === 0">No recipes found. Please make or try another selection of ingredients.</p>
+        <div id="found-recipes">
+            <div id="listed-recipes" v-for="recipe in recipes">
+                <a v-bind:href="`recipe/${recipe.id}`" target="_blank">
+                    <img id="recipe-image" src="https://picsum.photos/150" alt="Random-Image">
+                    <div>[[ recipe.name ]]</div>
+                </a>
+            </div>
         </div>
     </div>
 </body>

@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'feat';
+    src: url('fonts/FeaturedItem.ttf');
+}
+
+@font-face{
+    font-family: 'diner';
+    src: url('fonts/dinerscript.ttf')
+}
+
+body{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 5fr;
+    padding-left: 2%;}
+
+#title{
+    font-size: 200pt;
+    font-family: feat;
+    line-height: 175pt;;
+    grid-column: 1/8;
+    margin-top: 10pt;
+    color: #4AB5C1;
+}
+
+#ingredients-title{
+    font-family: diner;
+    font-size: 50pt;
+    grid-column: 1/8;
+    color: #4AB5C1;
+}
+
+#ingredients{
+    grid-column: 1/8;
+    color: #666666;
+    font-family: feat;
+    margin-left: 10%;
+    white-space: pre-line;
+}
+
+#steps-title{
+    font-family: diner;
+    font-size: 50pt;
+    grid-column: 1/8;
+    color: #4AB5C1;
+}
+
+#steps-view{
+    grid-column: 1/8;
+    width: 75%;
+    margin-left: 10%;
+}
+
+#recipe-steps{
+    display: flex;
+    justify-content: flex-start;
+    color: #666666;
+    font-family: feat;
+    white-space: pre-line;
+}

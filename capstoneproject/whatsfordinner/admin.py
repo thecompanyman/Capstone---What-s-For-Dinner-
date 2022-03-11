@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import Recipe, Vegetables, Ingredients, Seasonings, Oils, RecipeIngredients
-# Register your models here.
 
 
 class RecipeIngredientsInline(admin.TabularInline):

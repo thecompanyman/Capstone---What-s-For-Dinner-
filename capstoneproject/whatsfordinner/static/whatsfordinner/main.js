@@ -4,6 +4,7 @@ let app = new Vue ({
     data: {
         available_vegetables: [],
         available_seasonings: [],
+        available_oils: [],
         selected_ingredients: [],
         recipes: [],
         submitted_ingredients: '',
@@ -24,6 +25,14 @@ let app = new Vue ({
             // console.log(response.data)
             this.available_seasonings = response.data
         },
+        availableOils: async function(){
+            let response = await axios({
+                method: 'get',
+                url: 'available_oils/',
+            })
+            // console.log(response.data)
+            this.available_oils = response.data
+        },
         displaySelected: function(name){
             let index = this.selected_ingredients.findIndex(el => el === name) //arrow function searching over the array, each element is the a, returns true when a = name
             if (index >= 0){
@@ -34,14 +43,6 @@ let app = new Vue ({
             };
             // console.log(this.selected_ingredients)
         },
-        // getRecipes: async function(){
-        //     let response = await axios({
-        //         method: 'get',
-        //         url: 'get_recipes/',
-        //     })
-        //     console.log(response.data)
-        //     this.recipes = response.data
-        // },
         findRecipes: async function(){
             const csrftoken = Cookies.get('csrftoken')
             response = await axios({
@@ -54,16 +55,13 @@ let app = new Vue ({
                     submittedIngredients: this.selected_ingredients
                 }
             })
-            console.log(response.data)
-            // if(response.data.message === 'ok'){
-            //     // this.getRecipes()
-            // }
-            // this.displaySelected()
+            // console.log(response.data)
             this.recipes = response.data
         }
     },
     created: function (){
         this.availableVegetables()
         this.availableSeasonings()
+        this.availableOils()
     }
 })
